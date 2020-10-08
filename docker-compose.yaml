@@ -1,0 +1,11 @@
+version: '3'
+services: 
+    node:
+        build:
+            context: ./app
+            dockerfile: "Dockerfile"
+        image: "registry.gitlab.com/macducks/express-angular:${CI_COMMIT_TAG}"
+        container_name: express-angular
+        ports:
+            - 4001:3000
+
